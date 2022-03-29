@@ -2,6 +2,11 @@ const Screen = require("../screen");
 const { Color } = require("../utils/color");
 const Font = require("../utils/font")
 
+
+/**
+ * @class @design_pattern Screen
+ * @description Display/Scroll text on the screen
+ */
 class Screen_text_displayer {
 
     /**

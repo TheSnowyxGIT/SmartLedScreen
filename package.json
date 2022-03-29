@@ -1,0 +1,23 @@
+{
+  "name": "smartledscreen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheSnowyxGIT/SmartLedScreen.git"
+  },
+  "author": "adrien.pingard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheSnowyxGIT/SmartLedScreen/issues"
+  },
+  "homepage": "https://github.com/TheSnowyxGIT/SmartLedScreen#readme",
+  "dependencies": {
+    "@adrien.pgd/nodejsutilities": "^1.0.1",
+    "rpi-ws281x": "^1.0.36"
+  }
+}

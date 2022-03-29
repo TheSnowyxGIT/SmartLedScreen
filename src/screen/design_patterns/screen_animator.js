@@ -1,8 +1,12 @@
 const Screen = require("../screen");
 const { Color } = require("../utils/color");
-const Font = require("../utils/font")
 
-class Screen_animations {
+
+/**
+ * @class @design_pattern Screen
+ * @description Play animations to the screen
+ */
+class Screen_animator {
 
     /**
      * @private @var
@@ -45,4 +49,4 @@ class Screen_animations {
 
 }
 
-module.exports = Screen_animations;
+module.exports = Screen_animator;
