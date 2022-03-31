@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "exec": "./run.sh",
+    "check": "mocha -r ts-node/register tests/**/*.test.ts",
+    "dev": "concurrently -k -n \"TypeScript,Node\" -p \"[{name}]\" -c \"blue,green\" \"tsc --watch\" \"nodemon dist/index.js\""
   },
   "repository": {
     "type": "git",
@@ -16,8 +19,16 @@
     "url": "https://github.com/TheSnowyxGIT/SmartLedScreen/issues"
   },
   "homepage": "https://github.com/TheSnowyxGIT/SmartLedScreen#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "concurrently": "^7.0.0",
+    "mocha": "^9.2.2",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
   "dependencies": {
-    "@adrien.pgd/nodejsutilities": "^1.0.1",
+    "@adrien.pgd/nodejsutilities": "^1.0.2",
     "rpi-ws281x": "^1.0.36"
   }
 }

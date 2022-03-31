@@ -54,6 +54,12 @@ export class Color {
         return new Color(r,g,b);
     }
 
+    static Black: Color = Color.FromHEX("#000000");
+    static White: Color = Color.FromHEX("#ffffff");
+    static Red: Color = Color.FromHEX("#ff0000");
+    static Green: Color = Color.FromHEX("#00ff00");
+    static Blue: Color = Color.FromHEX("#0000ff");
+
     constructor(r: number, g: number, b: number) {
         this.r_ = r;
         this.g_ = g;

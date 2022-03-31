@@ -1,7 +1,7 @@
 import { Color } from "./color";
 
 /* Basic Point interface */
-interface Point {
+export interface Point {
     x: number;
     y: number;
 }
@@ -44,12 +44,25 @@ export class PixelMatrix {
     }
 
     public getColor(point: Point): Color {
+        if (this.isOutOfBound(point)){
+            return Color.FromHEX("#000000");
+        }
         const index = this.getIndex(point);
         return Color.FromUint32(this.pixels_[index]);
     }
 
-    public setColor(point: Point): void {
-        const index = this.getIndex(point);
+    public setColor(point: Point, color: Color): void {
+        if (!this.isOutOfBound(point)){
+            const index = this.getIndex(point);
+            this.pixels_[index] = color.getUint32();;
+        }
+    }
+
+    public fillColor(color: Color): void {
+        const color_uint32 = color.getUint32();
+        for (let i = 0; i < this.width_ * this.height_; i++){
+            this.pixels_[i] = color_uint32;
+        }
     }
 
     public getCoord(index: number): Point {
@@ -83,6 +96,10 @@ export class PixelMatrix {
             return (x * this.height_) + (this.height_ - 1 - y);
         }
         return (x * this.height_) + y;
+    }
+
+    public ToArray(): Uint32Array {
+        return this.pixels_;
     }
 
 }

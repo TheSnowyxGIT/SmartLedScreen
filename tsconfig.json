@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "strict": true
+    },
+    "include": [
+        "index.ts",
+        "src/**/*",
+        "types/**/*"
+    ]
+}
